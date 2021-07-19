@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MIS442_TermProject_CStark.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title>Site Master Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <form runat="server">
+
+    <div class="jumbotron">
+        <h1>Sole Survivor</h1>
+        <p>Minimalist Running Shoes</p>
+    </div>
+        <asp:Menu ID="Menu1" runat="server" BackColor="#F7F6F3" Orientation="Horizontal" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" StaticSubMenuIndent="10px">
+            <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#F7F6F3" />
+            <DynamicSelectedStyle BackColor="#5D7B9D" />
+
+            <Items>
+                <asp:MenuItem NavigateUrl="CustomerDisplay.aspx" Text="[Customer Display]" Value="Customer Display"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ContactDisplay.aspx" Text="[Contact Display]" Value="Contact Display"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="CustomerIncidentDisplay.aspx" Text="[Customer Incident Display]" Value="Customer Incident Display"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ProductManagement.aspx" Text="[Product Management]" Value="Product Management"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ContactUs.aspx" Text="[Contact Us]" Value="Contact Us"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+    <br />
+
+    <asp:ContentPlaceHolder ID="mainPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <br /> 
+
+    <footer class="text-info">
+        <asp:Label ID="lblContactUs" runat="server">To contact us, call us at 123-456-7890 or email us at 
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="mailto:SoleSurvivor@solesurvivor.com">SoleSurvivor@solesurvivor.com</asp:HyperLink>
+        </asp:Label>
+    </footer>
+
+    </form>
+</body>
+</html>
